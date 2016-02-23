@@ -1,0 +1,13 @@
+{
+  "name": "nike-code",
+  "version": "1.0.0",
+  "description": "Nike Coding Excercises",
+  "author": "Matt Lane",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
