@@ -25,11 +25,7 @@ function numberWord(n) {
     throw new Error(n + ' Not Integer');
   }
 
-  if (n === 0) {
-    return 'Zero';
-  }
-
-  else if (n > 0 && n < TEN) {
+  if (n >= 0 && n < TEN) {
     return onesPlace(n);
   }
 
@@ -85,11 +81,12 @@ function numberWord(n) {
  * Translate single-digit integer to English numeral.
  */
 function onesPlace(n) {
-  if (! ((n >= 1) && (n < TEN))) {
+  if (! ((n >= 0) && (n < TEN))) {
     throw new Error(n + ' not in ones place');
   }
 
   const numeralTable = {
+    0: 'Zero',
     1: 'One',
     2: 'Two',
     3: 'Three',
@@ -145,7 +142,7 @@ function tensPlace(n) {
     60: 'Sixty',
     70: 'Seventy',
     80: 'Eighty',
-    90: 'Ninety',
+    90: 'Ninety'
   };
 
   return numeralTable[n];
