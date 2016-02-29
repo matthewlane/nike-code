@@ -1,7 +1,6 @@
 # Nike Coding Excercises
 
-Completed by Matt Lane
-matthewlane@gmail.com
+Completed by <a href="mailto:matthewlane@gmail.com">Matt Lane</a>
 
 ## Number Word
 
@@ -12,7 +11,7 @@ You can test this manually by reading the notes at the bottom of the file, or
 installing the dev dependencies listed in package.json and running
   npm test
 
-Solution in numberWord.js
+Solution in [numberWord.js](numberWord.js)
 
 
 ## Breaking Bad
@@ -24,4 +23,4 @@ This was the excericse given during the interview. Later that day I tried
 recreating it from memory and solving it for my own curiousity. The function in
 this file should work in the example from the interview.
 
-Solution in breakingBad.js
+Solution in [breakingBad.js](breakingBad.js)
