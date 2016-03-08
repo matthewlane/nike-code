@@ -1,4 +1,4 @@
-# Numerals [![Build Status](https://travis-ci.org/matthewlane/nike-code.svg?branch=master)](https://travis-ci.org/matthewlane/nike-code)
+# Numerals [![Build Status](https://travis-ci.org/matthewlane/numerals.svg?branch=master)](https://travis-ci.org/matthewlane/numerals)
 
 Given any integer, print an English phrase that describes the integer
 (e.g., "Three Hundred Million Two Hundred Thirty Four").

@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const numberWord = require('../numberWord');
+const numberWord = require('../numerals');
 
 describe('numberWord.js', () => {
 

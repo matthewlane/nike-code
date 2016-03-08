@@ -1,7 +1,7 @@
 {
-  "name": "nike-code",
+  "name": "numerals",
   "version": "1.0.0",
-  "description": "Nike Coding Excercises",
+  "description": "Convert integers into English words",
   "author": "Matt Lane",
   "scripts": {
     "test": "mocha"
