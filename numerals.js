@@ -1,6 +1,6 @@
 'use strict';
 
-const numerals = new Map([
+const numberWords = new Map([
   [1000000000000000, 'Quadrillion'],
   [1000000000000, 'Trillion'],
   [1000000000, 'Billion'],
@@ -48,25 +48,25 @@ const numerals = new Map([
  * I only made this work in the quadrillions range because
  * Number.MAX_SAFE_INTEGER = 9,007,199,254,740,991
  */
-function numberWord(n) {
+function numeral(n) {
   if (! Number.isInteger(n)) {
     throw new Error(`${n} is not an integer`);
   }
 
   if (n < 0) {
-    return `Negative ${numberWord(Math.abs(n))}`;
+    return `Negative ${numeral(Math.abs(n))}`;
   }
 
   else if (n < 100) {
-    if (numerals.has(n)) {return numerals.get(n);}
-    // for numbers not directly in the numerals map,
+    if (numberWords.has(n)) {return numberWords.get(n);}
+    // for numbers not directly in the numberWords map,
     // break down into its 'tens' word and remainder
     // e.g., 42 has tens word 'Forty' and remainder 2
     let tens = Math.floor(n / 10) * 10;
-    let tensWord = numerals.get(tens);
+    let tensWord = numberWords.get(tens);
     let remainder = n % 10;
 
-    return tensWord + (remainder !== 0 ? ` ${numberWord(remainder)}` : ``);
+    return tensWord + (remainder !== 0 ? ` ${numeral(remainder)}` : ``);
   }
 
   else {
@@ -78,8 +78,8 @@ function numberWord(n) {
     let label = magnitude.label;
     let remainder = n % magnitude.value;
 
-    return `${numberWord(leadingDigit)} ${label}`
-      + (remainder !== 0 ? ` ${numberWord(remainder)}` : ``);
+    return `${numeral(leadingDigit)} ${label}`
+      + (remainder !== 0 ? ` ${numeral(remainder)}` : ``);
   }
 }
 
@@ -90,14 +90,14 @@ function numberWord(n) {
 function getMagnitude(n) {
   // maps iterate their elements by insertion order, so starting at the top,
   // as soon as n is greater than equal to an element, that's the magnitude
-  for (let number of numerals.keys()) {
+  for (let number of numberWords.keys()) {
     if (n >= number) {
       return {
         value: number,
-        label: numerals.get(number),
+        label: numberWords.get(number),
       };
     }
   }
 }
 
-module.exports = numberWord;
+module.exports = numeral;
